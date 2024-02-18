@@ -3,7 +3,7 @@ import 'package:mindful_frost_team_cherry_orchard/constants.dart';
 
 class PneumoniaTestScreen extends StatefulWidget {
   const PneumoniaTestScreen({Key? key}) : super(key: key);
-  static String routeName = 'FluTestScreen';
+  static String routeName = 'PneumoniaTestScreen';
 
   @override
   State<PneumoniaTestScreen> createState() => _PneumoniaTestScreenState();
