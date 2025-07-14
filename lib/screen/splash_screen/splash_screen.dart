@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 5), (){
+    Future.delayed(const Duration(seconds: 5), (){
       Navigator.pushNamedAndRemoveUntil(context, HomeScreen.routeName, (route) => false);
     });
   }
@@ -25,20 +25,25 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-      child: Expanded(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Mindful', style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                Text('AI', style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   color: kTextWhiteColor,
                   fontSize: 60.0,
                   fontStyle: FontStyle.italic,
                   letterSpacing: 2.0,
                 ),),
-                Text('Frost', style: GoogleFonts.pattaya(
+                Text('Challenge', style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  color: kTextWhiteColor,
+                  fontSize: 45.0,
+                  fontStyle: FontStyle.italic,
+                  letterSpacing: 2.0,
+                ),),
+                Text('School', style: GoogleFonts.pattaya(
                     fontSize: 60.0,
                     fontStyle: FontStyle.italic,
                     color: kTextWhiteColor,
@@ -47,14 +52,13 @@ class _SplashScreenState extends State<SplashScreen> {
               ],
             ),
             Image.asset(
-              'assets/logo/Cherry Orchard (1).png',
+              'assets/images/TIEUM_LOGO-removebg-preview.png',
               //25% of height & 50% of width
               height: 150,
               width: 150,
             ),
           ],
         ),
-      ),
     ));
   }
 }

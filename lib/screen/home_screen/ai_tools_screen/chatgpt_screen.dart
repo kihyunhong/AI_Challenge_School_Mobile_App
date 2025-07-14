@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:mindful_frost_team_cherry_orchard/constants.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/flu_test_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/ai_quiz_screen/chatgpt_quiz_screen.dart';
 
-class FluScreen extends StatelessWidget {
-  static String routeName = 'FluScreen';
+class ChatgptScreen extends StatelessWidget {
+  static String routeName = 'ChatgptScreen';
+
+  const ChatgptScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Key Facts About Flu',
+        title: const Text(
+          'About ChatGPT',
           style: TextStyle(color: kTextWhiteColor),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: kUIColor,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -44,27 +46,25 @@ class FluScreen extends StatelessWidget {
               _sectionTitle('Preventing Flu'),
               _sectionText(
                   'The first and the most important step is to get a flu vaccine each year. CDC also recommends everyday preventive actions (staying away from sick people, covering coughs and sneezes, etc.)'),
-              SizedBox(height: 8),
-              Image.asset('assets/images/flu_emergency.png'),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, FluTestScreen.routeName);
+                    Navigator.pushNamed(context, ChatGPTQuizScreen.routeName);
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text('Check if I got flu'),
-                  ),
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                           8.0), // Adjust the radius as needed
                     ),
                   ),
+                  child: const Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text('Go to ChatGPT Quiz'),
+                  ),
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               _sectionText(
                   'For more information, please visit the official website for CDC.'),
             ],
@@ -79,7 +79,7 @@ class FluScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
         ),
@@ -92,7 +92,7 @@ class FluScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Text(
         text,
-        style: TextStyle(fontSize: 16),
+        style: const TextStyle(fontSize: 16),
       ),
     );
   }

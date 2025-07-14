@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/SAD_test_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/covid_test_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/flu_test_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/frostbite_test_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/hypothermia_test_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/pneumonia_test_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/ai_quiz_screen/perplexity_quiz_.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/ai_quiz_screen/gamma_ai_quiz.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/ai_quiz_screen/chatgpt_quiz_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/ai_quiz_screen/notebookLM_quiz_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/ai_quiz_screen/SUNO_quiz.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/ai_quiz_screen/v0_quiz_screen.dart';
 
 import '../../constants.dart';
-import '../about_us_screen/about_us_screen.dart';
 import '../home_screen/home_screen.dart';
-import '../home_screen/widgets/data.dart';
 
 class TestScreen extends StatelessWidget {
   const TestScreen({super.key});
@@ -19,26 +17,26 @@ class TestScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Test',
+        title: const Text(
+          'Quiz',
           style: TextStyle(color: kTextWhiteColor),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: kUIColor,
       ),
       drawer: Drawer(
         child: ListView(
           children: [
-            UserAccountsDrawerHeader(
+            const UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
                 backgroundImage:
-                    AssetImage('assets/logo/Cherry Orchard (1).png'),
+                    AssetImage('assets/images/TIEUM_LOGO.png'),
               ),
               accountName: Text(
-                'Mindful Frost',
+                'AI Challenge School',
                 style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
               ),
-              accountEmail: Text('johnhong1004@gmail.com'),
+              accountEmail: Text('TIEUM'),
               decoration: BoxDecoration(
                   color: kPrimaryColor,
                   borderRadius: BorderRadius.only(
@@ -47,24 +45,24 @@ class TestScreen extends StatelessWidget {
                   )),
             ),
             ListTile(
-              leading: Icon(Icons.home),
+              leading: const Icon(Icons.home),
               iconColor: kSecondaryColor,
               focusColor: kSecondaryColor,
-              title: Text(
+              title: const Text(
                 'Home',
                 style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w300),
               ),
               onTap: () {
                 Navigator.pushNamed(context, HomeScreen.routeName);
               },
-              trailing: Icon(Icons.navigate_next),
+              trailing: const Icon(Icons.navigate_next),
             ),
             ListTile(
-              leading: Icon(Icons.account_tree),
+              leading: const Icon(Icons.account_tree),
               iconColor: kSecondaryColor,
               focusColor: kSecondaryColor,
-              title: Text(
-                'Test',
+              title: const Text(
+                'Quiz',
                 style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w300),
               ),
               onTap: () {
@@ -74,7 +72,7 @@ class TestScreen extends StatelessWidget {
                   (route) => false,
                 );
               },
-              trailing: Icon(Icons.navigate_next),
+              trailing: const Icon(Icons.navigate_next),
             ),
           ],
         ),
@@ -86,7 +84,7 @@ class TestScreen extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height / 4.5,
-            padding: EdgeInsets.all(kDefaultPadding),
+            padding: const EdgeInsets.all(kDefaultPadding),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -97,7 +95,7 @@ class TestScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Test Possible  ',
+                          'Test Your ',
                           style: Theme.of(context)
                               .textTheme
                               .titleLarge!
@@ -105,7 +103,7 @@ class TestScreen extends StatelessWidget {
                         ),
                         sizedBox,
                         Text(
-                          'WINTER DISEASES',
+                          'AI SKILLS',
                           style: Theme.of(context)
                               .textTheme
                               .titleLarge!
@@ -125,7 +123,7 @@ class TestScreen extends StatelessWidget {
               color: Colors.transparent,
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: kOtherColor,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(kDefaultPadding * 3),
@@ -133,25 +131,25 @@ class TestScreen extends StatelessWidget {
                   ),
                 ),
                 child: ListView(
-                  physics: BouncingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   children: [
-                    SizedBox(height: 30,),
+                    const SizedBox(height: 30,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         HomeCard(
                           onPress: () {
-                            Navigator.pushNamed(context, FluTestScreen.routeName);
+                            Navigator.pushNamed(context, ChatGPTQuizScreen.routeName);
                           },
-                          icon: 'assets/logo/icons8-flu-64.png',
-                          title: 'Flu',
+                          icon: 'assets/logo/icons8-chatgpt-50.png',
+                          title: 'ChatGPT',
                         ),
                         HomeCard(
                           onPress: () {
-                            Navigator.pushNamed(context, CovidTestScreen.routeName);
+                            Navigator.pushNamed(context, GammaAIQuizScreen.routeName);
                           },
-                          icon: 'assets/logo/icons8-coronavirus-50.png',
-                          title: 'Coronavirus',
+                          icon: 'assets/logo/gamma ai logo.png',
+                          title: 'GammaAI',
                         ),
                       ],
                     ),
@@ -160,17 +158,17 @@ class TestScreen extends StatelessWidget {
                       children: [
                         HomeCard(
                           onPress: () {
-                            Navigator.pushNamed(context, HypothermiaTestScreen.routeName);
+                            Navigator.pushNamed(context, SunoQuizScreen.routeName);
                           },
-                          icon: 'assets/logo/icons8-hypothermia-50.png',
-                          title: 'Hypothermia',
+                          icon: 'assets/logo/icons8-audio-wave-50.png',
+                          title: 'SUNO',
                         ),
                         HomeCard(
                           onPress: () {
-                            Navigator.pushNamed(context, FrostbiteTestScreen.routeName);
+                            Navigator.pushNamed(context, NotebookLMQuizScreen.routeName);
                           },
-                          icon: 'assets/logo/icons8-cold-64.png',
-                          title: 'Frostbite',
+                          icon: 'assets/logo/icons8-podcast-50.png',
+                          title: 'Notebook LM',
                         ),
                       ],
                     ),
@@ -179,17 +177,17 @@ class TestScreen extends StatelessWidget {
                       children: [
                         HomeCard(
                           onPress: () {
-                            Navigator.pushNamed(context, PneumoniaTestScreen.routeName);
+                            Navigator.pushNamed(context, V0QuizScreen.routeName);
                           },
-                          icon: 'assets/logo/icons8-pneumonia-64.png',
-                          title: 'Pneumonia',
+                          icon: 'assets/logo/icons8-website-50.png',
+                          title: 'V0',
                         ),
                         HomeCard(
                           onPress: () {
-                            Navigator.pushNamed(context, SADTestScreen.routeName);
+                            Navigator.pushNamed(context, PerplexityQuizScreen.routeName);
                           },
-                          icon: 'assets/logo/icons8-depression-64.png',
-                          title: 'SAD',
+                          icon: 'assets/logo/icons8-perplexity-ai-50.png',
+                          title: 'Perplexity',
                         ),
                       ],
                     ),
@@ -219,7 +217,7 @@ class HomeCard extends StatelessWidget {
     return InkWell(
       onTap: onPress,
       child: Container(
-        margin: EdgeInsets.only(top: kDefaultPadding / 2),
+        margin: const EdgeInsets.only(top: kDefaultPadding / 2),
         width: MediaQuery.of(context).size.width / 2.5,
         height: MediaQuery.of(context).size.height / 7.5,
         decoration: BoxDecoration(
@@ -241,7 +239,7 @@ class HomeCard extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleSmall,
             ),
-            SizedBox(
+            const SizedBox(
               height: kDefaultPadding / 3,
             ),
           ],

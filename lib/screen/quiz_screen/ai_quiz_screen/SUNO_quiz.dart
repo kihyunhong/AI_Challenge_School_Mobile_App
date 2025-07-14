@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:mindful_frost_team_cherry_orchard/constants.dart';
 
-class SADTestScreen extends StatefulWidget {
-  const SADTestScreen({Key? key}) : super(key: key);
-  static String routeName = 'SADTestScreen';
+class SunoQuizScreen extends StatefulWidget {
+  const SunoQuizScreen({super.key});
+  static String routeName = 'SunoQuizScreen';
 
   @override
-  State<SADTestScreen> createState() => _SADTestScreenState();
+  State<SunoQuizScreen> createState() => _SunoQuizScreenState();
 }
 
-class _SADTestScreenState extends State<SADTestScreen> {
+class _SunoQuizScreenState extends State<SunoQuizScreen> {
   bool isChecked1 = false;
   bool isNoChecked1 = false;
   bool isChecked2 = false;
@@ -30,12 +30,12 @@ class _SADTestScreenState extends State<SADTestScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'SAD Test',
+        title: const Text(
+          'SUNO Quiz',
           style: TextStyle(color: kTextWhiteColor),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: kUIColor,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -43,9 +43,9 @@ class _SADTestScreenState extends State<SADTestScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                  'Question 1: Have you noticed changes in your mood, such as feeling sad, anxious, or irritable, that coincide with changes in seasons, particularly during the fall and winter months?'),
-              SizedBox(
+              const Text(
+                  'Question 1: Are you currently exposed to cold temperatures or have you been exposed to cold temperatures recently?'),
+              const SizedBox(
                 height: 8,
               ),
               Row(
@@ -61,7 +61,7 @@ class _SADTestScreenState extends State<SADTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked1,
                       onChanged: (bool? value) {
@@ -72,11 +72,11 @@ class _SADTestScreenState extends State<SADTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text(
-                  'Question 2: Are you experiencing a loss of interest or pleasure in activities that you typically enjoy?'),
+              const Text(
+                  'Question 2: Are you shivering uncontrollably?'),
               Row(
                 children: [
                   Checkbox(
@@ -90,7 +90,7 @@ class _SADTestScreenState extends State<SADTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked2,
                       onChanged: (bool? value) {
@@ -101,10 +101,10 @@ class _SADTestScreenState extends State<SADTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text('Question 3: Are you experiencing changes in your sleep patterns, such as difficulty falling asleep, staying asleep, or oversleeping?'),
+              const Text('Question 3: Are you experiencing numbness or tingling in your extremities (fingers, toes, ears, nose)?'),
               Row(
                 children: [
                   Checkbox(
@@ -117,7 +117,7 @@ class _SADTestScreenState extends State<SADTestScreen> {
                           }
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked3,
                       onChanged: (bool? value) {
@@ -129,11 +129,11 @@ class _SADTestScreenState extends State<SADTestScreen> {
                           count++;
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text(
-                  'Question 4: Are you feeling sluggish or agitated, with difficulty concentrating or making decisions?'),
+              const Text(
+                  'Question 4: Is your skin pale or discolored?'),
               Row(
                 children: [
                   Checkbox(
@@ -147,7 +147,7 @@ class _SADTestScreenState extends State<SADTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked4,
                       onChanged: (bool? value) {
@@ -158,11 +158,11 @@ class _SADTestScreenState extends State<SADTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text(
-                  'Question 5: Do you experience feelings of hopelessness, worthlessness, or guilt that are difficult to shake?'),
+              const Text(
+                  'Question 5: Are you feeling unusually tired or drowsy?'),
               Row(
                 children: [
                   Checkbox(
@@ -176,7 +176,7 @@ class _SADTestScreenState extends State<SADTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked5,
                       onChanged: (bool? value) {
@@ -187,11 +187,11 @@ class _SADTestScreenState extends State<SADTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text(
-                  'Question 6: Have you experienced thoughts of death or suicide?'),
+              const Text(
+                  'Question 6: Are you experiencing confusion or difficulty thinking clearly?'),
               Row(
                 children: [
                   Checkbox(
@@ -205,7 +205,7 @@ class _SADTestScreenState extends State<SADTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked6,
                       onChanged: (bool? value) {
@@ -216,11 +216,11 @@ class _SADTestScreenState extends State<SADTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text(
-                  'Question 7: Do you notice improvements in your mood and energy levels as the seasons change, particularly when spring and summer arrive?'),
+              const Text(
+                  'Question 7: Do you feel weak or exhausted?'),
               Row(
                 children: [
                   Checkbox(
@@ -234,7 +234,7 @@ class _SADTestScreenState extends State<SADTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked7,
                       onChanged: (bool? value) {
@@ -245,10 +245,10 @@ class _SADTestScreenState extends State<SADTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Center(
@@ -260,15 +260,15 @@ class _SADTestScreenState extends State<SADTestScreen> {
                               barrierDismissible: true,
                               builder: (BuildContext context) {
                                 return AlertDialog(
-                                  title: Text('Result'),
-                                  content: Text(
-                                      'You highly got a SAD. Get an appropriate medication.'),
+                                  title: const Text('Result'),
+                                  content: const Text(
+                                      'You highly got a hypothermia. Get an appropriate medication.'),
                                   actions: [
                                     TextButton(
                                       onPressed: () {
                                         Navigator.of(context).pop();
                                       },
-                                      child: Text('Close'),
+                                      child: const Text('Close'),
                                     ),
                                   ],
                                 );
@@ -279,22 +279,22 @@ class _SADTestScreenState extends State<SADTestScreen> {
                               barrierDismissible: true,
                               builder: (BuildContext context) {
                                 return AlertDialog(
-                                  title: Text('Result'),
-                                  content: Text(
-                                      'We still recommend you to visit hospital to check for SAD.'),
+                                  title: const Text('Result'),
+                                  content: const Text(
+                                      'We still recommend you to visit hospital to check for hypothermia.'),
                                   actions: [
                                     TextButton(
                                       onPressed: () {
                                         Navigator.of(context).pop();
                                       },
-                                      child: Text('Close'),
+                                      child: const Text('Close'),
                                     )
                                   ],
                                 );
                               });
                         }
                       },
-                      child: Text('Submit'))),
+                      child: const Text('Submit'))),
             ],
           ),
         ),

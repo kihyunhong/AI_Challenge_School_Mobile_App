@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:mindful_frost_team_cherry_orchard/constants.dart';
 
-class PneumoniaTestScreen extends StatefulWidget {
-  const PneumoniaTestScreen({Key? key}) : super(key: key);
-  static String routeName = 'PneumoniaTestScreen';
+class GammaAIQuizScreen extends StatefulWidget {
+  const GammaAIQuizScreen({super.key});
+  static String routeName = 'GammaAIQuizScreen';
 
   @override
-  State<PneumoniaTestScreen> createState() => _PneumoniaTestScreenState();
+  State<GammaAIQuizScreen> createState() => _GammaAIQuizScreenState();
 }
 
-class _PneumoniaTestScreenState extends State<PneumoniaTestScreen> {
+class _GammaAIQuizScreenState extends State<GammaAIQuizScreen> {
   bool isChecked1 = false;
   bool isNoChecked1 = false;
   bool isChecked2 = false;
@@ -26,12 +26,12 @@ class _PneumoniaTestScreenState extends State<PneumoniaTestScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Pneumonia Test',
+        title: const Text(
+          'GammaAI Quiz',
           style: TextStyle(color: kTextWhiteColor),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: kUIColor,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -39,14 +39,14 @@ class _PneumoniaTestScreenState extends State<PneumoniaTestScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                   'Question 1: Have you experienced any of the following symptoms recently?'),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
-              Center(
+              const Center(
                   child: Text(
-                      '1. Cough\n2. Shortness of breath\n3. A high temperature\n4. Chest pain\n5. An aching body\n6. Loss of appetite\n7. Making wheezing noises when you breathe')),
+                      '1. Fever or chills\n2. Cough\n3. Shortness of breath or difficulty breathing\n4. Sore throat\n5. Congestion or runny nose\n6. Headaches\n7. Fatigue (tiredness)\n8. Vomiting and diarrhea\n9. Muscle or body aches\n10. New loss of taste or smell')),
               Row(
                 children: [
                   Checkbox(
@@ -60,7 +60,7 @@ class _PneumoniaTestScreenState extends State<PneumoniaTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked1,
                       onChanged: (bool? value) {
@@ -71,11 +71,11 @@ class _PneumoniaTestScreenState extends State<PneumoniaTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text(
-                  'Question 2: Do you have a persistent or recurrent cough that lingers for several weeks or more?'),
+              const Text(
+                  'Question 2: Have you been in close contact with someone diagnosed with COVID-19 recently?'),
               Row(
                 children: [
                   Checkbox(
@@ -89,7 +89,7 @@ class _PneumoniaTestScreenState extends State<PneumoniaTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked2,
                       onChanged: (bool? value) {
@@ -100,10 +100,10 @@ class _PneumoniaTestScreenState extends State<PneumoniaTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text('Question 3: Have you recently had a cold, the flu, or another respiratory infection that seems to have worsened or not improved?'),
+              const Text('Question 3: Have you received a COVID-19 vaccine this season?'),
               Row(
                 children: [
                   Checkbox(
@@ -116,7 +116,7 @@ class _PneumoniaTestScreenState extends State<PneumoniaTestScreen> {
                           }
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked3,
                       onChanged: (bool? value) {
@@ -128,11 +128,11 @@ class _PneumoniaTestScreenState extends State<PneumoniaTestScreen> {
                           count++;
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text(
-                  'Question 4: Are you older than 65, or do you have a weakened immune system due to conditions such as HIV/AIDS, cancer treatment, or organ transplantation?'),
+              const Text(
+                  'Question 4: Have you experienced a sudden onset of symptoms, typically within a few days?'),
               Row(
                 children: [
                   Checkbox(
@@ -146,7 +146,7 @@ class _PneumoniaTestScreenState extends State<PneumoniaTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked4,
                       onChanged: (bool? value) {
@@ -157,11 +157,11 @@ class _PneumoniaTestScreenState extends State<PneumoniaTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text(
-                  'Question 5: Are you experiencing nausea, vomiting, or diarrhea in addition to respiratory symptoms?'),
+              const Text(
+                  'Question 5: Do you have any underlying health conditions that may increase your risk of severe illness from COVID-19, such as diabetes, heart disease, or lung disease?'),
               Row(
                 children: [
                   Checkbox(
@@ -175,7 +175,7 @@ class _PneumoniaTestScreenState extends State<PneumoniaTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked5,
                       onChanged: (bool? value) {
@@ -186,10 +186,10 @@ class _PneumoniaTestScreenState extends State<PneumoniaTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Center(
@@ -201,15 +201,15 @@ class _PneumoniaTestScreenState extends State<PneumoniaTestScreen> {
                               barrierDismissible: true,
                               builder: (BuildContext context) {
                                 return AlertDialog(
-                                  title: Text('Result'),
-                                  content: Text(
-                                      'You highly got a pneumonia. Get an appropriate medication.'),
+                                  title: const Text('Result'),
+                                  content: const Text(
+                                      'You highly got COVID-19. Get an appropriate medication.'),
                                   actions: [
                                     TextButton(
                                       onPressed: () {
                                         Navigator.of(context).pop();
                                       },
-                                      child: Text('Close'),
+                                      child: const Text('Close'),
                                     ),
                                   ],
                                 );
@@ -220,22 +220,22 @@ class _PneumoniaTestScreenState extends State<PneumoniaTestScreen> {
                               barrierDismissible: true,
                               builder: (BuildContext context) {
                                 return AlertDialog(
-                                  title: Text('Result'),
-                                  content: Text(
-                                      'We still recommend you to visit hospital to check for pneumonia.'),
+                                  title: const Text('Result'),
+                                  content: const Text(
+                                      'We still recommend you to visit hospital or do an self-check to check for COVID-19.'),
                                   actions: [
                                     TextButton(
                                       onPressed: () {
                                         Navigator.of(context).pop();
                                       },
-                                      child: Text('Close'),
+                                      child: const Text('Close'),
                                     )
                                   ],
                                 );
                               });
                         }
                       },
-                      child: Text('Submit'))),
+                      child: const Text('Submit'))),
             ],
           ),
         ),

@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:mindful_frost_team_cherry_orchard/constants.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/flu_test_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/hypothermia_test_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/ai_quiz_screen/SUNO_quiz.dart';
 
-class HypothermiaScreen extends StatelessWidget {
-  static String routeName = 'HypothermiaScreen';
+class SunoScreen extends StatelessWidget {
+  static String routeName = 'SunoScreen';
+
+  const SunoScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Key Facts About Hypothermia',
+        title: const Text(
+          'About SUNO',
           style: TextStyle(color: kTextWhiteColor),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: kUIColor,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -43,25 +44,25 @@ class HypothermiaScreen extends StatelessWidget {
               _sectionTitle('Preventing Hypothermia'),
               _sectionText(
                   'Wear warm, multi-layered clothing with good hand and feet protection (avoid overly constricting wrist bands, socks, and shoes). Wear warm headgear. This is particularly important since significant heat is lost through an unprotected head.'),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, HypothermiaTestScreen.routeName);
+                    Navigator.pushNamed(context, SunoQuizScreen.routeName);
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text('Check if I got Hypothermia'),
-                  ),
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                           8.0), // Adjust the radius as needed
                     ),
                   ),
+                  child: const Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text('Go to SUNO Quiz'),
+                  ),
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               _sectionText(
                   'For more information, please visit the official website for CDC.'),
             ],
@@ -76,7 +77,7 @@ class HypothermiaScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
         ),
@@ -89,7 +90,7 @@ class HypothermiaScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Text(
         text,
-        style: TextStyle(fontSize: 16),
+        style: const TextStyle(fontSize: 16),
       ),
     );
   }

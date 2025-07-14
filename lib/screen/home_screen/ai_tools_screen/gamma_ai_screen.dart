@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:mindful_frost_team_cherry_orchard/constants.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/covid_test_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/flu_test_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/ai_quiz_screen/gamma_ai_quiz.dart';
 
-class CovidScreen extends StatelessWidget {
-  static String routeName = 'CovidScreen';
+class GammaAIScreen extends StatelessWidget {
+  static String routeName = 'GammaAIScreen';
+
+  const GammaAIScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Key Facts About Coronavirus',
+        title: const Text(
+          'About GammaAI',
           style: TextStyle(color: kTextWhiteColor),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: kUIColor,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -45,25 +46,25 @@ class CovidScreen extends StatelessWidget {
               _sectionTitle('Preventing Coronavirus'),
               _sectionText(
                   'The first and the most important step is to get a COVID-19 vaccine each year. CDC recommends that everyone who is eligible stay up to date on their COVID-19 vaccines.CDC also recommends everyday preventive actions (staying home and seperating from others, improving ventilation, wear high quality mask around other people, etc.)'),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, CovidTestScreen.routeName);
+                    Navigator.pushNamed(context, GammaAIQuizScreen.routeName);
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text('Check if I got COVID-19'),
-                  ),
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                           8.0), // Adjust the radius as needed
                     ),
                   ),
+                  child: const Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text('Go to GammmaAI Quiz'),
+                  ),
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               _sectionText(
                   'For more information, please visit the official website for CDC.'),
             ],
@@ -78,7 +79,7 @@ class CovidScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
         ),
@@ -91,7 +92,7 @@ class CovidScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Text(
         text,
-        style: TextStyle(fontSize: 16),
+        style: const TextStyle(fontSize: 16),
       ),
     );
   }

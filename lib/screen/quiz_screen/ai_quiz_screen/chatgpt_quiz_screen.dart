@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:mindful_frost_team_cherry_orchard/constants.dart';
 
-class HypothermiaTestScreen extends StatefulWidget {
-  const HypothermiaTestScreen({Key? key}) : super(key: key);
-  static String routeName = 'HypothermiaTestScreen';
+class ChatGPTQuizScreen extends StatefulWidget {
+  const ChatGPTQuizScreen({super.key});
+  static String routeName = 'ChatGPTQuizScreen';
 
   @override
-  State<HypothermiaTestScreen> createState() => _HypothermiaTestScreenState();
+  State<ChatGPTQuizScreen> createState() => _ChatGPTQuizScreenState();
 }
 
-class _HypothermiaTestScreenState extends State<HypothermiaTestScreen> {
+class _ChatGPTQuizScreenState extends State<ChatGPTQuizScreen> {
   bool isChecked1 = false;
   bool isNoChecked1 = false;
   bool isChecked2 = false;
@@ -20,22 +20,18 @@ class _HypothermiaTestScreenState extends State<HypothermiaTestScreen> {
   bool isNoChecked4 = false;
   bool isChecked5 = false;
   bool isNoChecked5 = false;
-  bool isChecked6 = false;
-  bool isNoChecked6 = false;
-  bool isChecked7 = false;
-  bool isNoChecked7 = false;
   int count = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Hypothermia Test',
+        title: const Text(
+          'ChatGPT Quiz',
           style: TextStyle(color: kTextWhiteColor),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: kUIColor,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -43,11 +39,14 @@ class _HypothermiaTestScreenState extends State<HypothermiaTestScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                  'Question 1: Are you currently exposed to cold temperatures or have you been exposed to cold temperatures recently?'),
-              SizedBox(
+              const Text(
+                  'Question 1: Have you experienced any of the following symptoms recently?'),
+              const SizedBox(
                 height: 8,
               ),
+              const Center(
+                  child: Text(
+                      '1. Fever or feeling feverish\n2. Cough\n3. Sore throat\n4. Runny or stuffy nose\n5. Muscle or body aches\n6. Headaches\n7. Fatigue (tiredness)\n8. Vomiting and diarrhea')),
               Row(
                 children: [
                   Checkbox(
@@ -61,7 +60,7 @@ class _HypothermiaTestScreenState extends State<HypothermiaTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked1,
                       onChanged: (bool? value) {
@@ -72,11 +71,11 @@ class _HypothermiaTestScreenState extends State<HypothermiaTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text(
-                  'Question 2: Are you shivering uncontrollably?'),
+              const Text(
+                  'Question 2: Have you been in close contact with someone diagnosed with the flu recently?'),
               Row(
                 children: [
                   Checkbox(
@@ -90,7 +89,7 @@ class _HypothermiaTestScreenState extends State<HypothermiaTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked2,
                       onChanged: (bool? value) {
@@ -101,10 +100,10 @@ class _HypothermiaTestScreenState extends State<HypothermiaTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text('Question 3: Are you experiencing numbness or tingling in your extremities (fingers, toes, ears, nose)?'),
+              const Text('Question 3: Have you received a flu vaccine this season?'),
               Row(
                 children: [
                   Checkbox(
@@ -117,7 +116,7 @@ class _HypothermiaTestScreenState extends State<HypothermiaTestScreen> {
                           }
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked3,
                       onChanged: (bool? value) {
@@ -129,11 +128,11 @@ class _HypothermiaTestScreenState extends State<HypothermiaTestScreen> {
                           count++;
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text(
-                  'Question 4: Is your skin pale or discolored?'),
+              const Text(
+                  'Question 4: Have you experienced a sudden onset of symptoms, typically within a few days?'),
               Row(
                 children: [
                   Checkbox(
@@ -147,7 +146,7 @@ class _HypothermiaTestScreenState extends State<HypothermiaTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked4,
                       onChanged: (bool? value) {
@@ -158,11 +157,11 @@ class _HypothermiaTestScreenState extends State<HypothermiaTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text(
-                  'Question 5: Are you feeling unusually tired or drowsy?'),
+              const Text(
+                  'Question 5: Are you experiencing difficulty breathing or shortness of breath?'),
               Row(
                 children: [
                   Checkbox(
@@ -176,7 +175,7 @@ class _HypothermiaTestScreenState extends State<HypothermiaTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked5,
                       onChanged: (bool? value) {
@@ -187,88 +186,30 @@ class _HypothermiaTestScreenState extends State<HypothermiaTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text(
-                  'Question 6: Are you experiencing confusion or difficulty thinking clearly?'),
-              Row(
-                children: [
-                  Checkbox(
-                      value: isChecked6,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          isChecked6 = value ?? false;
-                          if (isChecked6) {
-                            isNoChecked6 = false;
-                          }
-                          count++;
-                        });
-                      }),
-                  Text('Yes'),
-                  Checkbox(
-                      value: isNoChecked6,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          isNoChecked6 = value ?? false;
-                          if (isNoChecked6) {
-                            isChecked6 = false;
-                          }
-                        });
-                      }),
-                  Text('No'),
-                ],
-              ),
-              Text(
-                  'Question 7: Do you feel weak or exhausted?'),
-              Row(
-                children: [
-                  Checkbox(
-                      value: isChecked7,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          isChecked7 = value ?? false;
-                          if (isChecked7) {
-                            isNoChecked7 = false;
-                          }
-                          count++;
-                        });
-                      }),
-                  Text('Yes'),
-                  Checkbox(
-                      value: isNoChecked7,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          isNoChecked7 = value ?? false;
-                          if (isNoChecked7) {
-                            isChecked7 = false;
-                          }
-                        });
-                      }),
-                  Text('No'),
-                ],
-              ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Center(
                   child: ElevatedButton(
                       onPressed: () {
-                        if (count > 4) {
+                        if (count > 3) {
                           showDialog(
                               context: context,
                               barrierDismissible: true,
                               builder: (BuildContext context) {
                                 return AlertDialog(
-                                  title: Text('Result'),
-                                  content: Text(
-                                      'You highly got a hypothermia. Get an appropriate medication.'),
+                                  title: const Text('Result'),
+                                  content: const Text(
+                                      'You highly got flu. Get an appropriate medication.'),
                                   actions: [
                                     TextButton(
                                       onPressed: () {
                                         Navigator.of(context).pop();
                                       },
-                                      child: Text('Close'),
+                                      child: const Text('Close'),
                                     ),
                                   ],
                                 );
@@ -279,22 +220,22 @@ class _HypothermiaTestScreenState extends State<HypothermiaTestScreen> {
                               barrierDismissible: true,
                               builder: (BuildContext context) {
                                 return AlertDialog(
-                                  title: Text('Result'),
-                                  content: Text(
-                                      'We still recommend you to visit hospital to check for hypothermia.'),
+                                  title: const Text('Result'),
+                                  content: const Text(
+                                      'We still recommend you to visit hospital to check for flu.'),
                                   actions: [
                                     TextButton(
                                       onPressed: () {
                                         Navigator.of(context).pop();
                                       },
-                                      child: Text('Close'),
+                                      child: const Text('Close'),
                                     )
                                   ],
                                 );
                               });
                         }
                       },
-                      child: Text('Submit'))),
+                      child: const Text('Submit'))),
             ],
           ),
         ),

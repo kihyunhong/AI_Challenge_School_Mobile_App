@@ -1,36 +1,36 @@
 import 'package:flutter/cupertino.dart';
 import 'package:mindful_frost_team_cherry_orchard/screen/about_us_screen/about_us_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/diseases_screen/SAD_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/diseases_screen/coronavirus_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/diseases_screen/frostbite_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/diseases_screen/hypothermia_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/diseases_screen/pneumonia_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/ai_tools_screen/perplexity_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/ai_tools_screen/gamma_ai_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/ai_tools_screen/notebook_lm_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/ai_tools_screen/suno_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/ai_tools_screen/V0_screen.dart';
 import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/home_screen.dart';
 import 'package:mindful_frost_team_cherry_orchard/screen/splash_screen/splash_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/SAD_test_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/frostbite_test_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/hypothermia_test_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/pneumonia_test_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/test_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/diseases_screen/flu_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/flu_test_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/covid_test_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/ai_quiz_screen/perplexity_quiz_.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/ai_quiz_screen/notebookLM_quiz_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/ai_quiz_screen/SUNO_quiz.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/ai_quiz_screen/v0_quiz_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/quiz_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/ai_tools_screen/chatgpt_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/ai_quiz_screen/chatgpt_quiz_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/ai_quiz_screen/gamma_ai_quiz.dart';
 
 Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
-  SplashScreen.routeName: (context) => SplashScreen(),
-  HomeScreen.routeName: (context) => HomeScreen(),
-  TestScreen.routeName: (context) => TestScreen(),
-  AboutUsScreen.routeName: (context) => AboutUsScreen(),
-  FluScreen.routeName: (context) => FluScreen(),
-  FluTestScreen.routeName: (context) => FluTestScreen(),
-  CovidScreen.routeName: (context) => CovidScreen(),
-  CovidTestScreen.routeName: (context) => CovidTestScreen(),
-  HypothermiaScreen.routeName: (context) => HypothermiaScreen(),
-  HypothermiaTestScreen.routeName: (context) => HypothermiaTestScreen(),
-  FrostbiteScreen.routeName: (context) => FrostbiteScreen(),
-  FrostbiteTestScreen.routeName: (context) => FrostbiteTestScreen(),
-  PneumoniaScreen.routeName: (context) => PneumoniaScreen(),
-  PneumoniaTestScreen.routeName: (context) => PneumoniaTestScreen(),
-  SADScreen.routeName: (context) => SADScreen(),
-  SADTestScreen.routeName: (context) => SADTestScreen(),
+  SplashScreen.routeName: (context) => const SplashScreen(),
+  HomeScreen.routeName: (context) => const HomeScreen(),
+  TestScreen.routeName: (context) => const TestScreen(),
+  AboutUsScreen.routeName: (context) => const AboutUsScreen(),
+  ChatgptScreen.routeName: (context) => const ChatgptScreen(),
+  ChatGPTQuizScreen.routeName: (context) => const ChatGPTQuizScreen(),
+  GammaAIScreen.routeName: (context) => const GammaAIScreen(),
+  GammaAIQuizScreen.routeName: (context) => const GammaAIQuizScreen(),
+  SunoScreen.routeName: (context) => const SunoScreen(),
+  SunoQuizScreen.routeName: (context) => const SunoQuizScreen(),
+  NotebookLMScreen.routeName: (context) => const NotebookLMScreen(),
+  NotebookLMQuizScreen.routeName: (context) => const NotebookLMQuizScreen(),
+  V0Screen.routeName: (context) => const V0Screen(),
+  V0QuizScreen.routeName: (context) => const V0QuizScreen(),
+  PerplexityScreen.routeName: (context) => const PerplexityScreen(),
+  PerplexityQuizScreen.routeName: (context) => const PerplexityQuizScreen(),
 };

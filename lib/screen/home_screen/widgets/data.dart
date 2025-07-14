@@ -11,11 +11,11 @@ class UserName extends StatelessWidget {
     return Row(
       children: [
         Text(
-          'Mindful  ',
+          'AI Challenge ',
           style: Theme.of(context)
               .textTheme
               .titleLarge!
-              .copyWith(fontWeight: FontWeight.w300, fontSize: 30.0),
+              .copyWith(fontWeight: FontWeight.w300, fontSize: 25.0),
         ),
         Text(
           userName,

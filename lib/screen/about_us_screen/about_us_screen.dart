@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 import '../home_screen/home_screen.dart';
-import '../test_screen/test_screen.dart';
+import '../quiz_screen/quiz_screen.dart';
 
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({super.key});
@@ -12,7 +12,7 @@ class AboutUsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'About Us',
           style: TextStyle(color: kTextWhiteColor),
         ),
@@ -22,16 +22,16 @@ class AboutUsScreen extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: [
-            UserAccountsDrawerHeader(
+            const UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
                 backgroundImage:
-                AssetImage('assets/logo/Cherry Orchard (1).png'),
+                AssetImage('assets/images/TIEUM_LOGO.png'),
               ),
               accountName: Text(
-                'Mindful Frost',
+                'AI Challenge School',
                 style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
               ),
-              accountEmail: Text('johnhong1004@gmail.com'),
+              accountEmail: Text('TIEUM'),
               decoration: BoxDecoration(
                   color: kPrimaryColor,
                   borderRadius: BorderRadius.only(
@@ -40,23 +40,23 @@ class AboutUsScreen extends StatelessWidget {
                   )),
             ),
             ListTile(
-              leading: Icon(Icons.home),
+              leading: const Icon(Icons.home),
               iconColor: kSecondaryColor,
               focusColor: kSecondaryColor,
-              title: Text(
+              title: const Text(
                 'Home',
                 style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w300),
               ),
               onTap: () {
                 Navigator.pushNamed(context, HomeScreen.routeName);
               },
-              trailing: Icon(Icons.navigate_next),
+              trailing: const Icon(Icons.navigate_next),
             ),
             ListTile(
-              leading: Icon(Icons.account_tree),
+              leading: const Icon(Icons.account_tree),
               iconColor: kSecondaryColor,
               focusColor: kSecondaryColor,
-              title: Text(
+              title: const Text(
                 'Test',
                 style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w300),
               ),
@@ -67,13 +67,13 @@ class AboutUsScreen extends StatelessWidget {
                       (route) => false,
                 );
               },
-              trailing: Icon(Icons.navigate_next),
+              trailing: const Icon(Icons.navigate_next),
             ),
             ListTile(
-              leading: Icon(Icons.question_answer),
+              leading: const Icon(Icons.question_answer),
               iconColor: kSecondaryColor,
               focusColor: kSecondaryColor,
-              title: Text(
+              title: const Text(
                 'About us',
                 style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w300),
               ),
@@ -84,7 +84,7 @@ class AboutUsScreen extends StatelessWidget {
                       (route) => false,
                 );
               },
-              trailing: Icon(Icons.navigate_next),
+              trailing: const Icon(Icons.navigate_next),
             )
           ],
         ),

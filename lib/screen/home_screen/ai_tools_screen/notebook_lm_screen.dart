@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:mindful_frost_team_cherry_orchard/constants.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/flu_test_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/frostbite_test_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/ai_quiz_screen/notebookLM_quiz_screen.dart';
 
-class FrostbiteScreen extends StatelessWidget {
-  static String routeName = 'FrostbiteScreen';
+class NotebookLMScreen extends StatelessWidget {
+  static String routeName = 'NotebookLMScreen';
+
+  const NotebookLMScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Key Facts About Frostbite',
+        title: const Text(
+          'About NotebookLM',
           style: TextStyle(color: kTextWhiteColor),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: kUIColor,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -47,25 +48,25 @@ class FrostbiteScreen extends StatelessWidget {
               _sectionText(
                 'Also Wear appropriate clothing that protects your extremities, such as:\n1. well-insulated boots and a thick pair of well-fitting socks\n2. mittens – they provide better protection against very cold weather than gloves\n 3. a warm, weatherproof hat that covers your ears\n4. multiple thin layers of warm, loose-fitting clothing'
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, FrostbiteTestScreen.routeName);
+                    Navigator.pushNamed(context, NotebookLMQuizScreen.routeName);
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text('Check if I got a frostbite'),
-                  ),
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                           8.0), // Adjust the radius as needed
                     ),
                   ),
+                  child: const Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text('Go to Notebook LM Quiz'),
+                  ),
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               _sectionText(
                   'For more information, please visit the official website for CDC.'),
             ],
@@ -80,7 +81,7 @@ class FrostbiteScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
         ),
@@ -93,7 +94,7 @@ class FrostbiteScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Text(
         text,
-        style: TextStyle(fontSize: 16),
+        style: const TextStyle(fontSize: 16),
       ),
     );
   }

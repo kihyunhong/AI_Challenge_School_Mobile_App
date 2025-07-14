@@ -15,12 +15,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Mindful Frost',
+      title: 'AI Challenge School',
       theme: ThemeData.light().copyWith(
         //scaffold default color
           scaffoldBackgroundColor: kPrimaryColor,
           primaryColor: kPrimaryColor,
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
               color: kPrimaryColor,
               elevation: 0,
               iconTheme: IconThemeData(color: kTextWhiteColor)),

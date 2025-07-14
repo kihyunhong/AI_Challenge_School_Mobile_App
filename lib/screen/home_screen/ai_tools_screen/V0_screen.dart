@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:mindful_frost_team_cherry_orchard/constants.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/flu_test_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/test_screen/diseases_test_screen/pneumonia_test_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/quiz_screen/ai_quiz_screen/v0_quiz_screen.dart';
 
-class PneumoniaScreen extends StatelessWidget {
-  static String routeName = 'PneumoniaScreen';
+class V0Screen extends StatelessWidget {
+  static String routeName = 'V0Screen';
+
+  const V0Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Key Facts About Pneumonia',
+        title: const Text(
+          'About V0',
           style: TextStyle(color: kTextWhiteColor),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: kUIColor,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -46,25 +47,25 @@ class PneumoniaScreen extends StatelessWidget {
               _sectionTitle('Preventing Pneumonia'),
               _sectionText(
                   'Washing your hands regularly. Cleaning and disinfecting surfaces that are touched a lot. Coughing or sneezing into a tissue or into your elbow or sleeve. Limiting contact with cigarette smoke or quitting smoking. Taking good care of medical conditions (like asthma, diabetes, or heart disease).'),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, PneumoniaTestScreen.routeName);
+                    Navigator.pushNamed(context, V0QuizScreen.routeName);
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text('Check if I got pneumonia'),
-                  ),
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                           8.0), // Adjust the radius as needed
                     ),
                   ),
+                  child: const Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text('Go to V0 Quiz'),
+                  ),
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               _sectionText(
                   'For more information, please visit the official website for CDC.'),
             ],
@@ -79,7 +80,7 @@ class PneumoniaScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
         ),
@@ -92,7 +93,7 @@ class PneumoniaScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Text(
         text,
-        style: TextStyle(fontSize: 16),
+        style: const TextStyle(fontSize: 16),
       ),
     );
   }

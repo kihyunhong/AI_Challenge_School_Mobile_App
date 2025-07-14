@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/diseases_screen/SAD_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/diseases_screen/coronavirus_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/diseases_screen/flu_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/diseases_screen/frostbite_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/diseases_screen/hypothermia_screen.dart';
-import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/diseases_screen/pneumonia_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/ai_tools_screen/perplexity_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/ai_tools_screen/gamma_ai_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/ai_tools_screen/chatgpt_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/ai_tools_screen/notebook_lm_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/ai_tools_screen/suno_screen.dart';
+import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/ai_tools_screen/V0_screen.dart';
 import 'package:mindful_frost_team_cherry_orchard/screen/home_screen/widgets/data.dart';
 
 import '../../constants.dart';
-import '../about_us_screen/about_us_screen.dart';
-import '../test_screen/test_screen.dart';
+import '../quiz_screen/quiz_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,19 +18,19 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home', style: TextStyle(color: kTextWhiteColor),),
+        title: const Text('Home', style: TextStyle(color: kTextWhiteColor),),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: kUIColor,
       ),
       drawer: Drawer(
         child: ListView(
           children: [
-            UserAccountsDrawerHeader(
+            const UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage('assets/logo/Cherry Orchard (1).png'),
+                backgroundImage: AssetImage('assets/images/TIEUM_LOGO.png'),
               ),
-                accountName: Text('Mindful Frost', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),),
-                accountEmail: Text('johnhong1004@gmail.com'),
+                accountName: Text('AI Challenge School', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),),
+                accountEmail: Text('TIEUM'),
             decoration: BoxDecoration(
               color: kPrimaryColor,
               borderRadius: BorderRadius.only(
@@ -40,26 +39,26 @@ class HomeScreen extends StatelessWidget {
               )
             ),),
             ListTile(
-              leading: Icon(Icons.home),
+              leading: const Icon(Icons.home),
               iconColor: kSecondaryColor,
               focusColor: kSecondaryColor,
-              title: Text('Home',
+              title: const Text('Home',
                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w300),),
               onTap: (){
                 Navigator.pushNamed(context, HomeScreen.routeName);
               },
-              trailing: Icon(Icons.navigate_next),
+              trailing: const Icon(Icons.navigate_next),
             ),
             ListTile(
-              leading: Icon(Icons.account_tree),
+              leading: const Icon(Icons.account_tree),
               iconColor: kSecondaryColor,
               focusColor: kSecondaryColor,
-              title: Text('Test',
+              title: const Text('Quiz',
                 style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w300),),
               onTap: (){
                 Navigator.pushNamedAndRemoveUntil(context, TestScreen.routeName, (route) => false,);
               },
-              trailing: Icon(Icons.navigate_next),
+              trailing: const Icon(Icons.navigate_next),
             ),
           ],
         ),
@@ -71,24 +70,24 @@ class HomeScreen extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height / 3.5,
-            padding: EdgeInsets.all(kDefaultPadding),
+            padding: const EdgeInsets.all(kDefaultPadding),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Column(
+                    const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         UserName(
-                          userName: 'Frost',
+                          userName: 'School',
                         ),
                       ],
                     ),
                     kHalfSizedBox,
                     UserPicture(
-                      picAddress: 'assets/logo/Cherry Orchard (1).png',
+                      picAddress: 'assets/images/TIEUM_LOGO.png',
                       onPress: () {
                         //사진 동그랗게 확대
                         showDialog(
@@ -98,7 +97,7 @@ class HomeScreen extends StatelessWidget {
                                 content: Container(
                                   child: ClipOval(
                                     child: Image.asset(
-                                        'assets/logo/Cherry Orchard (1).png'),
+                                        'assets/images/TIEUM_LOGO.png'),
                                   ),
                                 ),
                               );
@@ -117,7 +116,7 @@ class HomeScreen extends StatelessWidget {
               color: Colors.transparent,
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: kOtherColor,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(kDefaultPadding * 3),
@@ -125,25 +124,25 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 child: ListView(
-                  physics: BouncingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   children: [
-                    SizedBox(height: 30,),
+                    const SizedBox(height: 30,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         HomeCard(
                           onPress: () {
-                            Navigator.pushNamed(context, FluScreen.routeName);
+                            Navigator.pushNamed(context, ChatgptScreen.routeName);
                           },
-                          icon: 'assets/logo/icons8-flu-64.png',
-                          title: 'Flu',
+                          icon: 'assets/logo/icons8-chatgpt-50.png',
+                          title: 'ChatGPT',
                         ),
                         HomeCard(
                           onPress: () {
-                            Navigator.pushNamed(context, CovidScreen.routeName);
+                            Navigator.pushNamed(context, GammaAIScreen.routeName);
                           },
-                          icon: 'assets/logo/icons8-coronavirus-50.png',
-                          title: 'Coronavirus',
+                          icon: 'assets/logo/gamma ai logo.png',
+                          title: 'Gamma Ai',
                         ),
                       ],
                     ),
@@ -152,17 +151,17 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         HomeCard(
                           onPress: () {
-                            Navigator.pushNamed(context, HypothermiaScreen.routeName);
+                            Navigator.pushNamed(context, SunoScreen.routeName);
                           },
-                          icon: 'assets/logo/icons8-hypothermia-50.png',
-                          title: 'Hypothermia',
+                          icon: 'assets/logo/icons8-audio-wave-50.png',
+                          title: 'SUNO',
                         ),
                         HomeCard(
                           onPress: () {
-                            Navigator.pushNamed(context, FrostbiteScreen.routeName);
+                            Navigator.pushNamed(context, NotebookLMScreen.routeName);
                           },
-                          icon: 'assets/logo/icons8-cold-64.png',
-                          title: 'Frostbite',
+                          icon: 'assets/logo/icons8-podcast-50.png',
+                          title: 'Notebook LM',
                         ),
                       ],
                     ),
@@ -171,17 +170,17 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         HomeCard(
                           onPress: () {
-                            Navigator.pushNamed(context, PneumoniaScreen.routeName);
+                            Navigator.pushNamed(context, V0Screen.routeName);
                           },
-                          icon: 'assets/logo/icons8-pneumonia-64.png',
-                          title: 'Pneumonia',
+                          icon: 'assets/logo/icons8-website-50.png',
+                          title: 'V0',
                         ),
                         HomeCard(
                           onPress: () {
-                            Navigator.pushNamed(context, SADScreen.routeName);
+                            Navigator.pushNamed(context, PerplexityScreen.routeName);
                           },
-                          icon: 'assets/logo/icons8-depression-64.png',
-                          title: 'SAD',
+                          icon: 'assets/logo/icons8-perplexity-ai-50.png',
+                          title: 'Perplexity',
                         ),
                       ],
                     ),
@@ -211,7 +210,7 @@ class HomeCard extends StatelessWidget {
     return InkWell(
       onTap: onPress,
       child: Container(
-        margin: EdgeInsets.only(top: kDefaultPadding / 2),
+        margin: const EdgeInsets.only(top: kDefaultPadding / 2),
         width: MediaQuery.of(context).size.width / 2.5,
         height: MediaQuery.of(context).size.height / 7.5,
         decoration: BoxDecoration(
@@ -233,7 +232,7 @@ class HomeCard extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleSmall,
             ),
-            SizedBox(
+            const SizedBox(
               height: kDefaultPadding / 3,
             ),
           ],

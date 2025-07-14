@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:mindful_frost_team_cherry_orchard/constants.dart';
 
-class FluTestScreen extends StatefulWidget {
-  const FluTestScreen({Key? key}) : super(key: key);
-  static String routeName = 'FluTestScreen';
+class NotebookLMQuizScreen extends StatefulWidget {
+  const NotebookLMQuizScreen({super.key});
+  static String routeName = 'NotebookLMQuizScreen';
 
   @override
-  State<FluTestScreen> createState() => _FluTestScreenState();
+  State<NotebookLMQuizScreen> createState() => _NotebookLMQuizScreenState();
 }
 
-class _FluTestScreenState extends State<FluTestScreen> {
+class _NotebookLMQuizScreenState extends State<NotebookLMQuizScreen> {
   bool isChecked1 = false;
   bool isNoChecked1 = false;
   bool isChecked2 = false;
@@ -20,18 +20,22 @@ class _FluTestScreenState extends State<FluTestScreen> {
   bool isNoChecked4 = false;
   bool isChecked5 = false;
   bool isNoChecked5 = false;
+  bool isChecked6 = false;
+  bool isNoChecked6 = false;
+  bool isChecked7 = false;
+  bool isNoChecked7 = false;
   int count = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Flu Test',
+        title: const Text(
+          'Notebook LM Quiz',
           style: TextStyle(color: kTextWhiteColor),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: kUIColor,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -39,14 +43,11 @@ class _FluTestScreenState extends State<FluTestScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                  'Question 1: Have you experienced any of the following symptoms recently?'),
-              SizedBox(
+              const Text(
+                  'Question 1: Have you been exposed to extremely cold temperatures or windy conditions recently?'),
+              const SizedBox(
                 height: 8,
               ),
-              Center(
-                  child: Text(
-                      '1. Fever or feeling feverish\n2. Cough\n3. Sore throat\n4. Runny or stuffy nose\n5. Muscle or body aches\n6. Headaches\n7. Fatigue (tiredness)\n8. Vomiting and diarrhea')),
               Row(
                 children: [
                   Checkbox(
@@ -60,7 +61,7 @@ class _FluTestScreenState extends State<FluTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked1,
                       onChanged: (bool? value) {
@@ -71,11 +72,11 @@ class _FluTestScreenState extends State<FluTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text(
-                  'Question 2: Have you been in close contact with someone diagnosed with the flu recently?'),
+              const Text(
+                  'Question 2: Are you experiencing numbness or tingling in any part of your body, particularly your fingers, toes, ears, or nose?'),
               Row(
                 children: [
                   Checkbox(
@@ -89,7 +90,7 @@ class _FluTestScreenState extends State<FluTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked2,
                       onChanged: (bool? value) {
@@ -100,10 +101,10 @@ class _FluTestScreenState extends State<FluTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text('Question 3: Have you received a flu vaccine this season?'),
+              const Text('Question 3: Do you notice any changes in skin color, such as pale or white patches?'),
               Row(
                 children: [
                   Checkbox(
@@ -116,7 +117,7 @@ class _FluTestScreenState extends State<FluTestScreen> {
                           }
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked3,
                       onChanged: (bool? value) {
@@ -128,11 +129,11 @@ class _FluTestScreenState extends State<FluTestScreen> {
                           count++;
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text(
-                  'Question 4: Have you experienced a sudden onset of symptoms, typically within a few days?'),
+              const Text(
+                  'Question 4: Does the skin feel unusually firm or waxy to the touch?'),
               Row(
                 children: [
                   Checkbox(
@@ -146,7 +147,7 @@ class _FluTestScreenState extends State<FluTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked4,
                       onChanged: (bool? value) {
@@ -157,11 +158,11 @@ class _FluTestScreenState extends State<FluTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              Text(
-                  'Question 5: Are you experiencing difficulty breathing or shortness of breath?'),
+              const Text(
+                  'Question 5: Are you experiencing any difficulty moving or using the affected body part?'),
               Row(
                 children: [
                   Checkbox(
@@ -175,7 +176,7 @@ class _FluTestScreenState extends State<FluTestScreen> {
                           count++;
                         });
                       }),
-                  Text('Yes'),
+                  const Text('Yes'),
                   Checkbox(
                       value: isNoChecked5,
                       onChanged: (bool? value) {
@@ -186,30 +187,88 @@ class _FluTestScreenState extends State<FluTestScreen> {
                           }
                         });
                       }),
-                  Text('No'),
+                  const Text('No'),
                 ],
               ),
-              SizedBox(
+              const Text(
+                  'Question 6: Have you noticed any signs of tissue damage, such as blackening or darkening of the skin?'),
+              Row(
+                children: [
+                  Checkbox(
+                      value: isChecked6,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isChecked6 = value ?? false;
+                          if (isChecked6) {
+                            isNoChecked6 = false;
+                          }
+                          count++;
+                        });
+                      }),
+                  const Text('Yes'),
+                  Checkbox(
+                      value: isNoChecked6,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isNoChecked6 = value ?? false;
+                          if (isNoChecked6) {
+                            isChecked6 = false;
+                          }
+                        });
+                      }),
+                  const Text('No'),
+                ],
+              ),
+              const Text(
+                  'Question 7: Are you experiencing pain, burning, or throbbing sensations in the affected area?'),
+              Row(
+                children: [
+                  Checkbox(
+                      value: isChecked7,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isChecked7 = value ?? false;
+                          if (isChecked7) {
+                            isNoChecked7 = false;
+                          }
+                          count++;
+                        });
+                      }),
+                  const Text('Yes'),
+                  Checkbox(
+                      value: isNoChecked7,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isNoChecked7 = value ?? false;
+                          if (isNoChecked7) {
+                            isChecked7 = false;
+                          }
+                        });
+                      }),
+                  const Text('No'),
+                ],
+              ),
+              const SizedBox(
                 height: 20,
               ),
               Center(
                   child: ElevatedButton(
                       onPressed: () {
-                        if (count > 3) {
+                        if (count > 4) {
                           showDialog(
                               context: context,
                               barrierDismissible: true,
                               builder: (BuildContext context) {
                                 return AlertDialog(
-                                  title: Text('Result'),
-                                  content: Text(
-                                      'You highly got flu. Get an appropriate medication.'),
+                                  title: const Text('Result'),
+                                  content: const Text(
+                                      'You highly got a frostbite. Get an appropriate medication.'),
                                   actions: [
                                     TextButton(
                                       onPressed: () {
                                         Navigator.of(context).pop();
                                       },
-                                      child: Text('Close'),
+                                      child: const Text('Close'),
                                     ),
                                   ],
                                 );
@@ -220,22 +279,22 @@ class _FluTestScreenState extends State<FluTestScreen> {
                               barrierDismissible: true,
                               builder: (BuildContext context) {
                                 return AlertDialog(
-                                  title: Text('Result'),
-                                  content: Text(
-                                      'We still recommend you to visit hospital to check for flu.'),
+                                  title: const Text('Result'),
+                                  content: const Text(
+                                      'We still recommend you to visit hospital to check for frostbite.'),
                                   actions: [
                                     TextButton(
                                       onPressed: () {
                                         Navigator.of(context).pop();
                                       },
-                                      child: Text('Close'),
+                                      child: const Text('Close'),
                                     )
                                   ],
                                 );
                               });
                         }
                       },
-                      child: Text('Submit'))),
+                      child: const Text('Submit'))),
             ],
           ),
         ),
