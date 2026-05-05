@@ -16,3 +16,8 @@ Development Notes:
 1. 기존에 해커톤에서 개발했던 모바일 앱 프론트엔드 템플릿을 기반으로 확장
 2. 정보 제공, 퀴즈, 업적 시스템 기능을 중심으로 구조 설계 및 구현
 3. UI/UX 흐름을 “학습 → 평가 → 보상” 구조로 설계
+
+Tech Stack:
+1. Flutter
+2. Dart
+3. Android Studio
